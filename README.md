@@ -5,10 +5,9 @@
 
 ```shell
 chmod +x build.sh
+/target/build.sh
 
-./build.sh >> ./build.log
-
-python /workspace/testEncoderAndDecoder.py  >> testEncoderAndDecoder.log
+python /workspace/testEncoderAndDecoder.py
 
 ```
 
