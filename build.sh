@@ -6,7 +6,7 @@ set -e
 
 # encoder
 python /target/pre.py
-/workspace/tensorrt/bin/trtexec --onnx=/workspace/encoder_new.onnx \
+/workspace/tensorrt/bin/trtexec --onnx=/target/encoder_new.onnx \
  --saveEngine=/target/encoder.plan \
  --minShapes=speech:1x1x80,speech_lengths:1 \
  --optShapes=speech:16x64x80,speech_lengths:16 \

@@ -39,7 +39,7 @@ def wenet_encoder():
     graph.nodes.append(newNode)  # 记得把新节点加入计算图中
     Not_30.inputs[0] = Slice_84_Cast_output
     graph.cleanup().toposort()
-    onnx.save(gs.export_onnx(graph), "/workspace/encoder_new.onnx")
+    onnx.save(gs.export_onnx(graph), "/target/encoder_new.onnx")
     pass
 
 
