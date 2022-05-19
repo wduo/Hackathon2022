@@ -4,7 +4,7 @@
 # run
 
 ```shell
-chmod +x build.sh
+chmod +x /target/build.sh
 /target/build.sh
 
 python /workspace/testEncoderAndDecoder.py
