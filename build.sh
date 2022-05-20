@@ -10,8 +10,9 @@ python /target/pre.py
 cd /target/LayerNormPlugin/LayerNormPlugin
 make clean
 make
-cp LayerNorm.so /target/LayerNormPlugin
+cp LayerNorm.so /target
 python /target/LayerNormPlugin/encoder-surgeonLayerNorm.py
+python /target/LayerNormPlugin/LayerNormPlugin/testLayerNormPlugin.py
 
 
 # encoder
@@ -21,9 +22,9 @@ python /target/LayerNormPlugin/encoder-surgeonLayerNorm.py
  --optShapes=speech:16x64x80,speech_lengths:16 \
  --maxShapes=speech:32x256x80,speech_lengths:32 \
  --workspace=8192 \
- --plugins=/target/LayerNormPlugin/LayerNorm.so \
- --noTF32 \
- --fp16
+ --plugins=/target/LayerNorm.so \
+ --noTF32
+ # --fp16
 
  
 #decoder
@@ -33,7 +34,7 @@ python /target/LayerNormPlugin/encoder-surgeonLayerNorm.py
  --optShapes=encoder_out:16x16x256,encoder_out_lens:16,hyps_pad_sos_eos:16x10x64,hyps_lens_sos:16x10,ctc_score:16x10 \
  --maxShapes=encoder_out:32x256x256,encoder_out_lens:32,hyps_pad_sos_eos:32x10x64,hyps_lens_sos:32x10,ctc_score:32x10 \
  --workspace=81920000 \
- --plugins=/target/LayerNormPlugin/LayerNorm.so \
- --noTF32 \
- --fp16
+ --plugins=/target/LayerNorm.so \
+ --noTF32
+ # --fp16
 

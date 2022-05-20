@@ -20,7 +20,7 @@ import numpy as np
 from cuda import cudart  # 使用 cuda runtime API
 import tensorrt as trt
 
-soFilePath      = './LayerNorm.so'
+soFilePath      = '/target/LayerNorm.so'
 nBS             = 4
 nSL             = 64
 nEmbedding      = 256
